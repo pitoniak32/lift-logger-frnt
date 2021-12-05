@@ -1,0 +1,11 @@
+<div *ngFor="let user of users$ | async">
+  <div style="height: 10px;"></div>
+  <pre>userId    : {{user._id}}</pre>
+  <pre>firstName : {{user.firstName}}</pre>
+  <pre>lastName  : {{user.lastName}}</pre>
+  <pre>email     : {{user.email}}</pre>
+  <pre>weight    : {{user.weight}}</pre>
+  <pre>height    : {{user.height}}</pre>
+  <pre>createdAt : {{user.createdAt}}</pre>
+  <app-lift [userId]="user._id"></app-lift>
+</div>
