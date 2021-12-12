@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,10 +7,11 @@ import { UserService } from '../user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  users$: Observable<any>
+  //users$: Observable<any>
+  errors = ['test-error1', 'test-error2']
 
   constructor(private userService: UserService) {
-    this.users$ = this.userService.getUsers()
+    //this.users$ = this.userService.getUsers()
   }
 
   ngOnInit(): void {

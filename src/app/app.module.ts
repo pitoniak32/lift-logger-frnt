@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'user', component: UserComponent },
     ])
   ],
   declarations: [

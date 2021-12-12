@@ -1,11 +1,17 @@
-<div *ngFor="let user of users$ | async">
-  <div style="height: 10px;"></div>
-  <pre>userId    : {{user._id}}</pre>
-  <pre>firstName : {{user.firstName}}</pre>
-  <pre>lastName  : {{user.lastName}}</pre>
-  <pre>email     : {{user.email}}</pre>
-  <pre>weight    : {{user.weight}}</pre>
-  <pre>height    : {{user.height}}</pre>
-  <pre>createdAt : {{user.createdAt}}</pre>
-  <app-lift [userId]="user._id"></app-lift>
+<h1 style="text-align: center;">Welcome to your home page!</h1>
+<div class="alert-danger" *ngIf="errors.length === 2">
+  {{errors}}
 </div>
+<!-- <div class="user-details" *ngFor="let user of users$ | async">
+  <div style="height: 10px;"></div>
+  <pre>
+    userId    : {{user._id}}
+    firstName : {{user.firstName}}
+    lastName  : {{user.lastName}}
+    email     : {{user.email}}
+    weight    : {{user.weight}}
+    height    : {{user.height}}
+    createdAt : {{user.createdAt}}
+  </pre>
+  <app-lift [userId]="user._id"></app-lift>
+</div> -->

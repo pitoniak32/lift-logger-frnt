@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../user';
 
 @Component({
@@ -9,14 +10,14 @@ import { User } from '../user';
 export class LoginComponent implements OnInit {
   userModel: User = new User('bob', 'bar', 'b2', 'bob', 'bob', 'b@gmail.com', 100, 7)
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { 
+    this.submitted = true; 
+  }
 
   login() {
     this.userModel = new User('', '', '', '', '', '', 0, 0)
