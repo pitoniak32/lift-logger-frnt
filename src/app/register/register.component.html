@@ -1,0 +1,59 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <form #userLoginForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" required [(ngModel)]="userModel.firstName" name="firstName" #firstName="ngModel">
+        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger" style="padding: 5px;">
+            first name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" required [(ngModel)]="userModel.lastName" name="lastName" #lastName="ngModel">
+        <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger" style="padding: 5px;">
+            last name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" required [(ngModel)]="userModel.username" name="username" #username="ngModel">
+        <div [hidden]="username.valid || username.pristine" class="alert alert-danger" style="padding: 5px;">
+            username is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password" required [(ngModel)]="userModel.password" name="password" #password="ngModel">
+        <div [hidden]="password.valid || password.pristine" class="alert alert-danger" style="padding: 5px;">
+          password is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" required [(ngModel)]="userModel.email" name="email" #email="ngModel">
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger" style="padding: 5px;">
+          email is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="weight">Weight</label>
+        <input type="text" class="form-control" id="weight" [(ngModel)]="userModel.weight" name="weight" #weight="ngModel">
+        <div [hidden]="weight.valid || weight.pristine" class="alert alert-danger" style="padding: 5px;">
+          update this message
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="height">Height</label>
+        <input type="text" class="form-control" id="Height" [(ngModel)]="userModel.height" name="height" #height="ngModel">
+        <div [hidden]="height.valid || height.pristine" class="alert alert-danger" style="padding: 5px;">
+          update this message
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!userLoginForm.form.valid">Register</button>
+    </form>
+  </div>
+  <div [hidden]="!submitted">
+    <h2>You have been registered!</h2>
+  </div>
+</div>
