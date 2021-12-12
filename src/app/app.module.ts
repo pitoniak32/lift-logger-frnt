@@ -16,7 +16,8 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: UserComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
     ])
   ],
   declarations: [

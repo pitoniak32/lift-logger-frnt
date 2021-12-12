@@ -4,6 +4,7 @@ export class User {
   lastName: string
   username: string
   password: string
+  confirmPassword: string
   email: string
   weight: number
   height: number
@@ -13,6 +14,7 @@ export class User {
     lastName: string,
     username: string,
     password: string,
+    confirmPassword:string,
     email: string,
     weight: number,
     height: number,
@@ -21,6 +23,7 @@ export class User {
     this.lastName = lastName
     this.username = username
     this.password = password
+    this.confirmPassword = confirmPassword
     this.weight = weight
     this.height = height
     this.email = email

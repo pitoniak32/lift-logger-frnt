@@ -10,7 +10,7 @@ export class RegisterComponent implements OnInit {
 
   usernames = ['test1', 'test2', 'test3']
 
-  userModel: User = new User('bob', 'bar', 'b2', 'bob', 'b@gmail.com', 100, 7)
+  userModel: User = new User('bob', 'bar', 'b2', 'bob', 'bob', 'b@gmail.com', 100, 7)
 
   constructor() { }
 
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() { this.submitted = true; }
 
   newUser() {
-    this.userModel = new User('', '', '', '', '', 0, 0)
+    this.userModel = new User('', '', '', '', '', '', 0, 0)
   }
 
 }

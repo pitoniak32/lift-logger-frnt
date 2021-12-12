@@ -1,0 +1,19 @@
+
+#button-box {
+  display: flex;
+}
+
+#login-submit-button {
+  margin-right: 5px;
+}
+#register-redirect-button {
+  margin-right: 5px;
+}
+
+.user-form {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

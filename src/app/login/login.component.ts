@@ -7,7 +7,7 @@ import { User } from '../user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userModel: User = new User('bob', 'bar', 'b2', 'bob', 'b@gmail.com', 100, 7)
+  userModel: User = new User('bob', 'bar', 'b2', 'bob', 'bob', 'b@gmail.com', 100, 7)
 
   constructor() { }
 
@@ -19,6 +19,6 @@ export class LoginComponent implements OnInit {
   onSubmit() { this.submitted = true; }
 
   login() {
-    this.userModel = new User('', '', '', '', '', 0, 0)
+    this.userModel = new User('', '', '', '', '', '', 0, 0)
   }
 }
