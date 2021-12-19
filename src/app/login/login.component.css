@@ -17,3 +17,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#login-form {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 5px #88888864;
+}
