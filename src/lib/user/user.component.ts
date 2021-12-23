@@ -1,10 +1,23 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UserService } from '../user.service';
+import { UserService } from '../../app/services/user.service';
 
 @Component({
+  template: `
+    <h1 style="text-align: center;">Welcome to your home page!</h1>
+      <div> 
+        <pre *ngIf="error!=undefined">
+          {{error | json}}
+        </pre>
+        <pre *ngIf="error===undefined && user !== undefined">
+          {{ user | json }}
+        </pre>
+      </div>
+    <div style="text-align: center;">
+      <button (click)="getUserInfo()">Get UserInfo</button>
+    </div>
+  `,
   selector: 'app-user',
-  templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit, OnDestroy {
