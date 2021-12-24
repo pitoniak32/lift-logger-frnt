@@ -10,6 +10,7 @@ import { LoginComponent } from '../lib/login/login.component';
 import { AppRoutingModule } from './routing/app.routing.module';
 import { NotFoundComponent } from './routing/not-found.component';
 import { AuthGuardService } from './routing/guards/auth-guard.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { AuthGuardService } from './routing/guards/auth-guard.service';
     LoginComponent,
     NotFoundComponent,
   ],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
