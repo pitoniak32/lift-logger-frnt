@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from '../../app/models/user';
-import { UserService } from '../../app/services/user.service';
+import { AuthService } from '../../app/services/auth.service';
 
 @Component({
   template: `
@@ -40,14 +39,11 @@ import { UserService } from '../../app/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  userModel: User = new User('bob', 'bar', 'b2', 'bob', 'bob', 'b@gmail.com', 100, 7)
-  login: Subscription | undefined
-  loggedIn: boolean = false
+  userModel: User = new User('id', 'bob', 'bar', 'b2', 'bob', 'bob', 'b@gmail.com', 100, 7)
   error_message: string = ""
 
   constructor(
-    private userService: UserService,
-    private router: Router,
+    private authService: AuthService,
   ) {}
 
   ngOnInit(): void {
@@ -57,23 +53,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmit() { 
     this.submitted = true;
-    this.login = this.userService.login(this.userModel.username, this.userModel.password).subscribe({
-      next: (result) => {
-        this.loggedIn = true 
-        this.userService.access_token = result.access_token
-        this.error_message = ""
-        this.router.navigateByUrl("/user")
-      }, 
-      error: (error) => { 
-        if(error.status === 401) {
-          this.error_message = "Username or Password Incorrect." 
-        }
-        this.loggedIn = false
-      },
-    })
+    this.authService.login(this.userModel.username, this.userModel.password)
   }
   
   ngOnDestroy(): void {
-    this.login?.unsubscribe()
   }
 }

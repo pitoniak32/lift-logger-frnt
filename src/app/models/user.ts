@@ -1,5 +1,6 @@
 
 export class User {
+  id: string
   firstName: string
   lastName: string
   username: string
@@ -10,6 +11,7 @@ export class User {
   height: number
 
   constructor(
+    id: string, 
     firstName: string,
     lastName: string,
     username: string,
@@ -19,6 +21,7 @@ export class User {
     weight: number,
     height: number,
   ) {
+    this.id = id
     this.firstName = firstName
     this.lastName = lastName
     this.username = username
